@@ -21,7 +21,7 @@ docker_count() {
 	CONTAINERS="-1"
 	if is_osx; then
 		if command_exists "docker"; then
-			if [[ $((`ps -ef | grep com.docker.hyperkit | grep -v grep | wc -l`)) > 0 ]]; then
+			if [[ $((`ps -ef | grep com\\.docker\\. | grep -v grep | wc -l`)) -gt 0 ]]; then
 				CONTAINERS=$((`docker ps -q | wc -l`))
 			fi
 		fi
